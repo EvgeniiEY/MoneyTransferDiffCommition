@@ -51,7 +51,7 @@ class MoneyTransferDiffCommitionKtTest {
         )
 
 
-        assertEquals(0, result)
+        assertEquals(999, result)
     }
     @Test
     fun commisionCalculateZero() {
