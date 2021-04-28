@@ -1,9 +1,9 @@
 package ru.netology
 
 val cardType: String = "VK Pay"
-val amount: Int = 0
-val commision: Double = 0.0
-val pastTransfersSum: Int = 0
+//val amount: Int = 0
+//val commision: Double = 0.0
+//val pastTransfersSum: Int = 0
 
 fun main() {
     println(commisionCalculate("Visa", 0, 1000))
