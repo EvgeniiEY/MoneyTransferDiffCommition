@@ -1,9 +1,7 @@
 import org.junit.Test
 
 import org.junit.Assert.*
-import ru.netology.cardType
-import ru.netology.commisionCalculate
-import ru.netology.main
+import ru.netology.*
 
 class MoneyTransferDiffCommitionKtTest {
 
@@ -51,7 +49,7 @@ class MoneyTransferDiffCommitionKtTest {
         )
 
 
-        assertEquals(999, result)
+        assertEquals(0, result)
     }
     @Test
     fun commisionCalculateZero() {
@@ -68,19 +66,30 @@ class MoneyTransferDiffCommitionKtTest {
 
         assertEquals(0, result)
     }
+
     @Test
-    fun mainReturnsTrue() {
-        val card = "0"
-        val pastSum = 100_000
-        val amount = 1_000
+    fun maestroMasterCardsZeroCommisionCheck() {
+        val amountMin = 1
+        val pastTransfersSumMax = 75_000
 
-        val result = main(
-
+        val result = maestroMasterCardsCommission(
+            amount = amountMin,
+            pastTransfersSum = pastTransfersSumMax
         )
-        assertTrue(true)
-
-
+        assertEquals(2000.6, result)
     }
+
+    @Test
+    fun visaMirCommisionCheck() {
+
+        val amountTest = 4667
+
+        val result = visaMirCommision(
+            amount = amountTest
+        )
+        assertEquals(3500, result)
+    }
+
 
 
 }
